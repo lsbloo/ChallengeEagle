@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">YourRecipes</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+
+    <string-array name="sections">
+        <item>Your Recipes</item>
+        <item>Create Recipes</item>
+    </string-array>
+</resources>

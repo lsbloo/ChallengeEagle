@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_inicial"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="79dp"
+            android:layout_marginTop="53dp"
+            android:src="@drawable/logotres">
+
+        </ImageView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/edt_login"
+            android:layout_alignStart="@+id/edt_login"
+            android:text="@string/login"
+            android:textSize="18sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/edt_login"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="244dp"
+            android:background="#42426F"
+            android:drawableLeft="@drawable/ic_account_circle_black_24dp"></EditText>
+
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/edt_login"
+            android:layout_marginBottom="215dp"
+            android:text="@string/password"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:digits="123456789"
+            android:background="#42426F"
+            android:layout_below="@+id/password"
+            android:ems="10"
+            android:drawableLeft="@drawable/ic_enhanced_encryption_black_24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-215dp">
+
+        </EditText>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:backgroundTint="#B22222"
+            android:layout_marginBottom="95dp"
+            android:shape="ring"
+            app:cardCornerRadius="18dp">
+
+
+            <TextView
+                android:id="@+id/btn_enter"
+                android:paddingLeft="66sp"
+                android:paddingTop="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sing in"
+                android:textStyle="bold"
+                android:typeface="monospace"
+
+                android:textSize="18sp">
+
+
+            </TextView>
+        </android.support.v7.widget.CardView>
+
+
+
+
+        <TextView
+            android:id="@+id/edt_cad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="41dp"
+            android:text="I dit not have an account, Register here!"
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            >
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
