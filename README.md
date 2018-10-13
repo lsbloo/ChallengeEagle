@@ -3,6 +3,7 @@
 
   - Para esse desafio, densenvolvi um aplicativo que tem como objetivo, armazenar receitas culinarias.
   - O aplicativo funciona offline usando uma base de dados local(sqlite).
+  - É necessário que o usuario realize uma autenticação, para poder ter suas receitas customizadas.
   - Classes que representariam o "crud".
   - UserRepository, RecipeRepository;
   - O aplicativo conta também com o carregamento de imagens a partir do dispositivo do usuário(Galeria).
