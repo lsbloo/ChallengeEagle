@@ -13,4 +13,8 @@
       * sqlite: contem classes que representam a persistencia dos dados dessas entidades, como tambem os metodos de armazenamento,editação,busca e remoçao
       * adapter: contem o adaptador do fragmento de visualizacao de receitas, seu objetivo é carregar uma lista de visualização de cada receita de forma customizada
       * notifactions: carrega uma notificacao na tela do usuario, quando o mesmo deleta uma receita.
+    
+   - Versao SDK alvo: 26
+   - versao SDK minima: 15
+   - Layout não responsivo
       
