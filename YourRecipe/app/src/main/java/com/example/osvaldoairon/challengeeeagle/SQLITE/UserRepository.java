@@ -83,6 +83,7 @@ public class UserRepository {
         if(list_users!=null && list_users.size()>1){
             for(User user : list_users){
                 if(user.getLogin().equals(login) && user.getPassword().equals(password)){
+                    Log.d("MASK", user.getEmail());
                     return user;
                 }
             }
@@ -108,17 +109,21 @@ public class UserRepository {
             String name = cursor.getString(indexColumnName);
             String login = cursor.getString(indexColumnLogin);
             String password = cursor.getString(indexColumnPassword);
-            String email = cursor.getColumnName(indexColumnEmail);
+            String email = cursor.getString(indexColumnEmail);
             boolean enabled = recoverUsersEnables(cursor.getColumnName(indexColumnEnabled));
 
 
             User u = new User();
+
+
 
             u.setName(name);
             u.setEnabled(enabled);
             u.setEmail(email);
             u.setLogin(login);
             u.setPassword(password);
+
+            Log.d("USER",u.getEmail());
 
             list_users.add(u);
 

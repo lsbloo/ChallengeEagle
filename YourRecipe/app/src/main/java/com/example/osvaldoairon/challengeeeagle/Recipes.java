@@ -14,12 +14,16 @@ public class Recipes extends AppCompatActivity {
 
     private TabLayout tableLayout;
     private ViewPager viewPager;
+    public static  String get_email;
+    public static String get_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
 
+         get_name = (String) getIntent().getSerializableExtra("name_user");
+         get_email = (String) getIntent().getSerializableExtra("email_user");
 
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setHomeButtonEnabled(true);

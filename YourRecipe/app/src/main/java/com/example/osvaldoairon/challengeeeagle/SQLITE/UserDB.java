@@ -7,9 +7,9 @@ import android.content.Context;
 
 public class UserDB extends SQLiteOpenHelper{
 
-    public static final String NAME_DATABASE="USERRECIPESSxxYx";
-    public static final int VERSION_DATABASE  = 16;
-    public static final String NAME_TABLE = "recipesUsersxxxzy";
+    public static final String NAME_DATABASE="USERRECIPESxSxxxYx";
+    public static final int VERSION_DATABASE  = 19;
+    public static final String NAME_TABLE = "recipesxUsersxxxxzy";
     public static final String ID_DATABASE="_id";
 
     public static final String USER_NAME= "username";

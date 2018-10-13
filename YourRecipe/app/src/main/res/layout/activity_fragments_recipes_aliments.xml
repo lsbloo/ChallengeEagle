@@ -10,7 +10,7 @@
         android:id="@+id/relativeum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
         tools:layout_editor_absoluteX="0dp"
@@ -18,7 +18,7 @@
 
 
         <ImageView
-            android:id="@+id/imageButton"
+            android:id="@+id/img_dish"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -55,12 +55,13 @@
             android:textStyle="bold"/>
 
         <EditText
-            android:id="@+id/how_to_make"
+            android:id="@+id/edt_name_dish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="say how to make this dish"
-            android:inputType="textMultiLine" />
+            android:hint="enter the name of the dish"
+            android:inputType="text"
+             />
 
         <TextView
             android:id="@+id/textView3"
@@ -71,12 +72,13 @@
             />
 
         <EditText
-            android:id="@+id/edt_name_dish"
+            android:id="@+id/edt_description_dish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="enter description of dish"
             android:inputType="text"
-            android:hint="enter the name of the dish" />
+            />
 
 
         <TextView
@@ -88,12 +90,12 @@
             />
 
         <EditText
-            android:id="@+id/edt_description_dish"
+            android:id="@+id/edt_how_to_make"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text"
-            android:hint="enter the name of the description" />
+            android:inputType="textMultiLine"
+            android:hint="say how to make this dish" />
 
 
 

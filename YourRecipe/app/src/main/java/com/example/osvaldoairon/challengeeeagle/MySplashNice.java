@@ -12,7 +12,8 @@ public class MySplashNice extends AppCompatActivity {
 
     private ProgressBar progressBar;
     protected final int TIME = 4000;
-
+    private static String get_name;
+    private static String get_email;
 
 
     @Override
@@ -21,8 +22,8 @@ public class MySplashNice extends AppCompatActivity {
         setContentView(R.layout.activity_my_splash_nice);
 
 
-        String get_name = (String) getIntent().getSerializableExtra("nameuser");
-        String get_email = (String) getIntent().getSerializableExtra("emailuser");
+        get_name = (String) getIntent().getSerializableExtra("nameuser");
+        get_email = (String) getIntent().getSerializableExtra("emailuser");
         boolean get_enabled = (Boolean) getIntent().getSerializableExtra("enabled");
         progressBar=(ProgressBar)findViewById(R.id.progressBar);
 
@@ -43,6 +44,8 @@ public class MySplashNice extends AppCompatActivity {
 
                  */
                 Intent at = new Intent(MySplashNice.this,Recipes.class);
+                at.putExtra("name_user",get_name);
+                at.putExtra("email_user",get_email);
                 startActivity(at);
                 finish();
 
