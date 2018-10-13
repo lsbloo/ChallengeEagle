@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.osvaldoairon.challengeeeagle.FontsCustomiz;
 import com.example.osvaldoairon.challengeeeagle.R;
 import com.example.osvaldoairon.challengeeeagle.models.Recipe;
 
@@ -57,8 +58,11 @@ public class RecipesAdapter extends BaseAdapter {
 
 
         nameDish.setText("Name: " +a.getName_dish());
-        descriptionDish.setText("Description:" + a.getDescription());
-        makeDish.setText("How to Make? :"+ a.getHow_to_make());
+        nameDish.setTypeface(FontsCustomiz.setRobotoRegular(ctx));
+        descriptionDish.setText("Description: " + a.getDescription());
+        descriptionDish.setTypeface(FontsCustomiz.setRobotoRegular(ctx));
+        makeDish.setText("How to Make?: "+ a.getHow_to_make());
+        makeDish.setTypeface(FontsCustomiz.setRobotoRegular(ctx));
         if(a.getBitmap_img()!=null){
             Log.d("MEC","meczada");
         }

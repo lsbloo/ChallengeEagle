@@ -3,8 +3,10 @@ package com.example.osvaldoairon.challengeeeagle.fragments;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -66,13 +68,23 @@ public class FragmentShowRecipe extends Fragment {
                             at.putExtra("descriptionRecipes",edit.getDescription());
                             at.putExtra("makeRecipes",edit.getHow_to_make());
                             startActivity(at);
-                            getActivity().finish();
+                            //getActivity().finish();
 
                         }
                     }).setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(getActivity(), "Delete!", Toast.LENGTH_SHORT).show();
+                            Recipe edit = recipesRepository.returnObjectRecipeToLister(posicao);
+
+                            boolean check = recipesRepository.deleteRecipes(0,edit.getName_dish(),edit.getDescription());
+                            if(check){
+                                Toast.makeText(getActivity(), "Delete sucess!", Toast.LENGTH_SHORT).show();
+                                Recipes n1 = new Recipes();
+//                                n1.createNotifications();
+                                recipesRepository.recoverRecipes(Recipes.get_email);
+                                list.setAdapter(adapter);
+                            }
                         }
                     }).show();
                 }

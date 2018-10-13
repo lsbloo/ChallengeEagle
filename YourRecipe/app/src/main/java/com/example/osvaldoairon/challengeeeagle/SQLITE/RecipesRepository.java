@@ -24,6 +24,7 @@ public class RecipesRepository {
     protected static  List<Recipe> list_recipes = new ArrayList<Recipe>();
     private Context ctx;
     protected static boolean check;
+    protected static boolean check_delete;
 
 
     public RecipesRepository(Context ctx){
@@ -88,6 +89,37 @@ public class RecipesRepository {
     }
 
 
+
+    public boolean deleteRecipes(int id, String name, String description){
+        /**
+         * Similar MethodEdit;
+         *
+         */
+        String ret_name = "\'"+name+"\'";
+        String ret_description = "\'"+description+"\'";
+        SQLiteDatabase db = recipesDB.getWritableDatabase();
+        int cont =0;
+        String ret_id="";
+        String whereClause = "_id=";
+        String sql = "SELECT * FROM "+recipesDB.NAME_TABLE+" WHERE "+recipesDB.NAME_DISH+" =" +ret_name+ " AND "+recipesDB.DESCRIPTION_DISH+ " ="+ret_description;
+
+        Cursor cursor = db.rawQuery(sql,null);
+
+        while(cursor.moveToNext()){
+            int indexColumnId = cursor.getColumnIndex(recipesDB.ID_COLUMN);
+
+            ret_id="\'"+cursor.getLong(indexColumnId)+"\'";
+            cont++;
+            Log.d("CONT_DELETE?",ret_id);
+            if(cont>=1) check_delete = true; break;
+        }
+        if(check_delete){
+            Log.d("CHECK_DELETE?","CHECK_DELETE?");
+            db.delete(recipesDB.NAME_TABLE,whereClause+ret_id,null);
+            return true;
+        }
+        return false;
+    }
     public boolean editRecipes(String nameOld,String descriptionOld,String makeNew,String nameNew,String descriptionNew){
         /**
          *
@@ -202,8 +234,11 @@ public class RecipesRepository {
 
 
     public Bitmap transformByteToBitmap(byte[] b){
+        /**
+         * Convert to Array of bytes[] in BitMap
+         * Class: BitmapFactory;
+         */
             Bitmap img = BitmapFactory.decodeByteArray(b,0,b.length);
-
             return img;
 
     }
