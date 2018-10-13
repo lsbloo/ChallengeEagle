@@ -81,7 +81,7 @@ public class FragmentShowRecipe extends Fragment {
                             if(check){
                                 Toast.makeText(getActivity(), "Delete sucess!", Toast.LENGTH_SHORT).show();
                                 Recipes n1 = new Recipes();
-//                                n1.createNotifications();
+                                n1.createNotifications(getActivity());
                                 recipesRepository.recoverRecipes(Recipes.get_email);
                                 list.setAdapter(adapter);
                             }

@@ -1,7 +1,6 @@
 package com.example.osvaldoairon.challengeeeagle.notifications;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
@@ -17,7 +16,7 @@ import com.example.osvaldoairon.challengeeeagle.Recipes;
 
 public class NotificationDelete {
 
-    public static final String ACTION_DELETE="om.example.osvaldoairon.challengeeeagle.notifications.DELETE_NOTIFCATION";
+    public static final String ACTION_DELETE="com.example.osvaldoairon.challengeeeagle.notifications.DELETE_NOTIFCATION";
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

@@ -26,6 +26,7 @@ public class Recipes extends AppCompatActivity {
     public static  String get_email;
     public static String get_name;
     private MyReceiver receiver;
+    private Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class Recipes extends AppCompatActivity {
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ctx = Recipes.this;
 
         tableLayout=(TabLayout)findViewById(R.id.tab_layout);
         viewPager=(ViewPager)findViewById(R.id.view_pager);
@@ -55,8 +57,8 @@ public class Recipes extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    public void createNotifications(){
-        NotificationDelete.createNotification(Recipes.this,"Delete Reciper", 1);
+    public void createNotifications(Context ctx){
+        NotificationDelete.createNotification(ctx,"Delete Reciper", 1);
     }
 
 
@@ -65,5 +67,11 @@ public class Recipes extends AppCompatActivity {
         public void onReceive(Context ctx , Intent at ){
             Toast.makeText(ctx, at.getAction(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
     }
 }

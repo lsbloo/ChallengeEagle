@@ -40,7 +40,14 @@
         <activity
             android:name=".EditRecipes"
             android:screenOrientation="portrait" />
-        <activity android:name=".DetailsAct"></activity>
+        <activity android:name=".DetailsAct"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Recipes">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Recipes"
+                />
+            </activity>
     </application>
 
 </manifest>
